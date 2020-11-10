@@ -15,7 +15,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        bat 'mvn package deploy -DmuleDeploy -Danypoint.username=njctrail -Danypoint.password=Njc@1234 -DapplicationName=jenkins-demo-sls '
+        bat 'mvn -Dmaven.repo.local=C:/Users/sushmitha/.m2/repository package deploy -DmuleDeploy -Danypoint.username=njctrail -Danypoint.password=Njc@1234 -DapplicationName=jenkins-demo-sls '
       }
     }
 
