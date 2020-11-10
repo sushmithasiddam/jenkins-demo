@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<http:listener-config name="httpListenerConfig" doc:name="HTTP Listener config" doc:id="8d5c19d8-962e-46af-a57a-40b7df59078d" >
+		<http:listener-connection host="${http.host}" port="${http.port}" />
+	</http:listener-config>
+	<configuration-properties doc:name="Configuration properties" doc:id="5f923730-5c46-4ca9-a1c7-e5cf5f138f8e" file="config.yaml" />
+	<http:request-config name="httpRequestConfiguration" doc:name="HTTP Request configuration" doc:id="a2af16e9-5864-4c9f-9b36-c1dec2d95b07" basePath="/api" >
+		<http:request-connection host="training4-american-ws.cloudhub.io" />
+	</http:request-config>	
+
+</mule>
