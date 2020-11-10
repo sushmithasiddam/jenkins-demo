@@ -9,13 +9,13 @@ pipeline {
 
     stage('Test') {
       steps {
-        bat ' mvn -f -Dmaven.repo.local=C:/Users/sushmitha/.m2/repository test'
+        bat ' mvn -Dmaven.repo.local=C:/Users/sushmitha/.m2/repository test'
       }
     }
 
     stage('Deploy') {
       steps {
-        bat 'mvn -f package deploy -DmuleDeploy -Danypoint.username=njctrail -Danypoint.password=Njc@1234 -DapplicationName=jenkins-demo '
+        bat 'mvn package deploy -DmuleDeploy -Danypoint.username=njctrail -Danypoint.password=Njc@1234 -DapplicationName=jenkins-demo-sls '
       }
     }
 
