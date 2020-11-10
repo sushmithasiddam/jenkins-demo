@@ -9,13 +9,13 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh ' mvn -f pom.xml -Denv=dev -Dkey=mule test'
+        bat ' mvn -f pom.xml -Denv=dev -Dkey=mule test'
       }
     }
 
     stage('Deploy') {
       steps {
-        sh 'mvn -f pom.xml package deploy -DmuleDeploy -Danypoint.username=njctrail -Danypoint.password=Njc@1234 -DapplicationName=jenkins-demo '
+        bat 'mvn -f pom.xml package deploy -DmuleDeploy -Danypoint.username=njctrail -Danypoint.password=Njc@1234 -DapplicationName=jenkins-demo '
       }
     }
 
